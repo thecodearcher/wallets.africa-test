@@ -1,0 +1,68 @@
+@import "pxconverter";
+.content {
+  background: url("/assets/imgs/bg.svg") no-repeat center center fixed;
+  background-size: cover;
+  height: 100%;
+  overflow: hidden;
+  padding: 0px 30px 30px 30px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  ion-button {
+    text-transform: initial;
+  }
+  .upper {
+    .logo {
+      margin-top: 86px;
+      margin-bottom: 30px;
+    }
+    .welcome {
+      .text {
+        color: white;
+        margin: 0px 0px 74px 0px;
+      }
+    }
+
+    .form {
+      ion-item {
+        --background: transparent;
+        --color: white;
+        --border-color: #ffffff;
+        &:nth-child(1) {
+          margin-bottom: 30px;
+        }
+      }
+    }
+    .forgot-password {
+      ion-button {
+        font-size: to-rem(12px);
+      }
+    }
+  }
+
+  .footer {
+    .sign-in-btn {
+      height: 40px;
+      --box-shadow: none;
+      --border-radius: 4px;
+      font-size: to-rem(14px);
+    }
+    .create-account {
+      margin-top: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: to-rem(14px);
+      p {
+        margin: 0px;
+      }
+      ion-button {
+        --padding-start: 5px;
+        --padding-end: 5px;
+        font-size: to-rem(14px);
+      }
+    }
+  }
+}
