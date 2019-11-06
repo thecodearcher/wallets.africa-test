@@ -1,9 +1,161 @@
-<ion-header>
+<ion-header no-border>
   <ion-toolbar>
-    <ion-title>home</ion-title>
+    <ion-title class="title">Hello, John</ion-title>
+    <ion-buttons slot="end" mode="md">
+      <ion-button mode="md" class="notification-btn" color="light">
+        <ion-icon slot="icon-only" src="assets/icon/notification.svg"></ion-icon>
+        <div class="bubble"></div>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
+  <ion-toolbar>
+    <div class="card">
+      <div class="balance">
+        <p class="label">Available Balance</p>
+        <p class="amount" *ngIf="showBalance; else hideBalance">4,802,030.00</p>
+        <ng-template #hideBalance>
+          <p class="amount">***.**</p>
+        </ng-template>
+
+        <div>
+          <ion-button (click)="toggleBalance()" fill="clear" color="light">
+            <span class="text">
+              {{showBalance ? 'Hide' : 'Show'}} Balance
+            </span>
+          </ion-button>
+        </div>
+      </div>
+      <div class="add-wallet">
+        <ion-button class="btn" color="light">
+          <ion-icon name="add"></ion-icon>
+        </ion-button>
+      </div>
+    </div>
+  </ion-toolbar>
+
 </ion-header>
 
 <ion-content>
+  <div class="service-options">
+    <ion-grid class="ion-no-padding">
+      <ion-row class="row">
+        <ion-col size="6">
+          <div tappable class="item ion-activatable">
+            <div class="icon">
+              <ion-icon src="assets/icon/airtime.svg"></ion-icon>
+            </div>
+            <div class="body">
+              <p class="text">Buy Airtime</p>
+            </div>
+            <ion-ripple-effect type="bounded"></ion-ripple-effect>
+          </div>
+        </ion-col>
+        <ion-col size="6">
+          <div tappable class="item ion-activatable">
+            <div class="icon">
+              <ion-icon src="assets/icon/transfer-funds.svg"></ion-icon>
+            </div>
+            <div class="body">
+              <p class="text">Transfer Funds</p>
+            </div>
+            <ion-ripple-effect type="bounded"></ion-ripple-effect>
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row class="row ion-align-items-center">
+        <ion-col size="6">
+          <div tappable class="item ion-activatable">
+            <div class="icon">
+              <ion-icon src="assets/icon/bills.svg"></ion-icon>
+            </div>
+            <div class="body">
+              <p class="text">Pay Bills</p>
+            </div>
+            <ion-ripple-effect type="bounded"></ion-ripple-effect>
+          </div>
+        </ion-col>
+        <ion-col size="6">
+          <div tappable class="item ion-activatable">
+            <div class="icon">
+              <ion-icon src="assets/icon/request-money.svg"></ion-icon>
+            </div>
+            <div class="body">
+              <p class="text">Request Money</p>
+            </div>
+            <ion-ripple-effect type="bounded"></ion-ripple-effect>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
 
+  </div>
+
+  <div class="recent-transactions">
+    <div class="heading">
+      <h4 class="text">Your Recent Transactions</h4>
+    </div>
+    <ion-list class="list" lines="none">
+      <ion-item class="item">
+        <div class="icon">
+          <ion-icon src="assets/icon/transfer-funds.svg" alt=""></ion-icon>
+        </div>
+        <div class="details">
+          <div class="title">
+            <div class="text">Transfer to Elegboja Seun</div>
+          </div>
+          <div class="bottom">
+            <div class="price">
+              <p class="text">
+                {{'13000' | currency:'&#8358; ':'symbol': '1.0-0'}}
+              </p>
+            </div>
+            <div class="date">
+              <p class="text">Feb 18</p>
+            </div>
+          </div>
+        </div>
+      </ion-item>
+      <ion-item class="item">
+        <div class="icon">
+          <ion-icon src="assets/icon/request-money.svg" alt=""></ion-icon>
+        </div>
+        <div class="details">
+          <div class="title">
+            <div class="text">Received from Elegboja Seun</div>
+          </div>
+          <div class="bottom">
+            <div class="price">
+              <p class="text">
+                {{'3650' | currency:'&#8358; ':'symbol': '1.0-0'}}
+              </p>
+            </div>
+            <div class="date">
+              <p class="text">Feb 18</p>
+            </div>
+          </div>
+        </div>
+      </ion-item>
+      <ion-item class="item">
+        <div class="icon">
+          <ion-icon src="assets/icon/airtime.svg" alt=""></ion-icon>
+        </div>
+        <div class="details">
+          <div class="title">
+            <div class="text">MTN Airtime</div>
+          </div>
+          <div class="bottom">
+            <div class="price">
+              <p class="text">
+                {{'500' | currency:'&#8358; ':'symbol': '1.0-0'}}
+              </p>
+            </div>
+            <div class="date">
+              <p class="text">Feb 18</p>
+            </div>
+          </div>
+        </div>
+      </ion-item>
+    </ion-list>
+
+  </div>
 </ion-content>

@@ -6,4 +6,18 @@ ion-tab-button {
     width: 20px;
     height: 20px;
   }
+
+  &.more-btn {
+    position: relative;
+
+    .bubble {
+      position: absolute;
+      background: #e4445d;
+      height: 10px;
+      width: 10px;
+      border-radius: 50%;
+      left: calc(50% + 10px);
+      top: 4px;
+    }
+  }
 }
