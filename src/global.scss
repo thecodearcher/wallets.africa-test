@@ -26,6 +26,12 @@
 @import "~@ionic/angular/css/flex-utils.css";
 
 @font-face {
+  font-family: "IBM Plex Mono";
+  src: url("assets/fonts/IBMPlexMono-Regular.ttf") format("truetype");
+  font-weight: normal;
+}
+
+@font-face {
   font-family: IBMPlexSans;
   src: url("assets/fonts/IBMPlexSans-Regular.ttf") format("truetype");
   font-weight: normal;
